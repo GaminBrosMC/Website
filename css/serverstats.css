@@ -1,5 +1,5 @@
 body,html{
-  background:url(cdn/GBNbanner.png) center no-repeat;
+  background:url(https://gaminbros.vercel.app/cdn/GBNbanner.png) center no-repeat;
   background-size:cover;
   min-height:100%;
   font-family: 'Roboto Mono',  monospace;
