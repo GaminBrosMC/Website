@@ -2,6 +2,34 @@
 <title>GaminBros Network</title>
 <link rel="icon" type="image/x-icon" href="/cdn/1.png">
 <script type="text/javascript">
+	var browser = (function(){
+    var ua = navigator.userAgent, 
+        M  = ua.match(/(chrome|safari|firefox|edge|trident(?=\/))\/?\s*([\d\.]+)/i) || [],
+        tem;
+
+    if(/trident/i.test(M[1])){
+        tem =  /\brv[ :]+(\d+(\.\d+)?)/g.exec(ua) || [];
+        return ['ie', (tem[1] || '')];
+    }
+    M = M[2] ? [M[1].toLowerCase(), M[2]]:[navigator.appName.toLowerCase(), navigator.appVersion, '-?'];
+    if((tem = ua.match(/version\/([\.\d]+)/i))!= null) M[2] = tem[1];
+    return M;
+})();
+
+var supported = {
+    'chrome'
+    'safari'
+	'edge'
+	'firefox'
+}
+
+if (supported[browser[0]] <= (browser[0]=='safari' ? parseFloat(browser[1]) : parseInt(browser[1],10))) {
+    alert('Your browser is OK !');
+}else{
+    window.location.href = 'error/unsupported';
+}
+</script>
+<script type="text/javascript">
 
   if (navigator.userAgent.match(/Android/i) ||
       navigator.userAgent.match(/webOS/i) ||
